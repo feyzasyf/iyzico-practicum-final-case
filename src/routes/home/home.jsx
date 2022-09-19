@@ -2,7 +2,7 @@ import React from 'react'
 import SearchForm from '../../components/searchForm/searchForm';
 import StarshipList from '../../components/starshipList/starshipList';
 
-function Home() {
+const Home= ()=> {
   return (
     <div>
         <SearchForm/>
