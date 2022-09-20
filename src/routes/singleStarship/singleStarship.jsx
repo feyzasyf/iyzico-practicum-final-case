@@ -4,7 +4,6 @@ import useAxios from "../../hooks/useAxios";
 import { Link } from "react-router-dom";
 
 const SingleStarship = () => {
-  console.log("singlestarship rendered");
   const { id } = useParams();
 
   const { data: starship, loading, error } = useAxios(id);

@@ -1,9 +1,10 @@
 import React from "react";
-import { getUrlId } from "../../utils/getId/getStarshipId";
+import { getUrlId } from "../../utils/getId/utilFunctions";
 import { Link } from "react-router-dom";
 
 const StarshipPreviewCard = ({ starship }) => {
   const { name, model, hyperdrive_rating, url } = starship;
+
   const id = getUrlId(url);
 
   return (

@@ -5,7 +5,6 @@ const baseUrl = "https://swapi.dev/api/starships/";
 const useAxios = (params) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [error, setError] = useState("");
 
   const getData = async (url) => {
     setLoading(true);
@@ -22,7 +21,7 @@ const useAxios = (params) => {
     getData(baseUrl + params);
   }, [params]);
 
-  return { loading, data, error };
+  return { loading, data };
 };
 
 export default useAxios;

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../../context/context";
 
 const SearchForm = () => {
-  const { searchTerm, setSearchTerm } = useContext(AppContext);
+  const { searchTerm, setSearchTerm, setPageNumber } = useContext(AppContext);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -10,6 +10,7 @@ const SearchForm = () => {
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
+    setPageNumber(null);
   };
   return (
     <form className="search-form-container" onSubmit={handleOnSubmit}>

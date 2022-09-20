@@ -1,17 +1,23 @@
 import { createContext, useState, useEffect } from "react";
-import axios from "axios";
 import useAxios from "../hooks/useAxios";
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [pageNumber, setPageNumber] = useState("");
 
-  const urlParams = (searchTerm && `?search=${searchTerm}`) || "";
-  const { loading, data, error } = useAxios(urlParams);
-  const starships = data.results;
+  let urlParams = "";
+  if (searchTerm) {
+    urlParams = `?search=${searchTerm}`;
+    if (pageNumber) urlParams = `${urlParams}&page=${pageNumber}`;
+  } else if (pageNumber) {
+    urlParams = `?page=${pageNumber}`;
+  }
 
-  const value = { starships, searchTerm, setSearchTerm };
+  const { loading, data } = useAxios(urlParams);
+
+  const value = { data, searchTerm, setSearchTerm, setPageNumber, pageNumber };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
