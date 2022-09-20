@@ -4,8 +4,9 @@ import useAxios from "../hooks/useAxios";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [pageNumber, setPageNumber] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [pageNumber, setPageNumber] = useState('');
+
 
   let urlParams = "";
   if (searchTerm) {
@@ -15,9 +16,12 @@ export const AppProvider = ({ children }) => {
     urlParams = `?page=${pageNumber}`;
   }
 
+
+
   const { loading, data } = useAxios(urlParams);
 
-  const value = { data, searchTerm, setSearchTerm, setPageNumber, pageNumber };
+
+  const value = { data, searchTerm, setSearchTerm, setPageNumber, pageNumber, loading };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
