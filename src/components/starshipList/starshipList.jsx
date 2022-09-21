@@ -9,10 +9,12 @@ const StarshipList = () => {
   const [starshipsData, setStarshipsData] = useState([]);
   const { results: starships, next } = data;
 
+
+  // move this useEffect code into context
   useEffect(() => {
     if (pageNumber) {
       if (starshipsData.length == 0) {
-        setPageNumber("");
+        setPageNumber(null);
       } else {
         setStarshipsData((prevData) => {
           return [...prevData, ...starships];
