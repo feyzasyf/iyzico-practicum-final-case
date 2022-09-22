@@ -3,6 +3,9 @@ import { AppContext } from "../../context/context";
 import StarshipPreviewCard from "../starship-preview/starship-preview-card";
 import Loading from "../loading/loading";
 import { getNextPage } from "../../utils/getId/utilFunctions";
+import { StarshipListContainer, LoadButtonContainer,LoadButton } from "./starshipList.styles";
+
+
 
 const StarshipList = () => {
   const { data, pageNumber, setPageNumber, loading } = useContext(AppContext);
@@ -35,22 +38,23 @@ const StarshipList = () => {
   }
   return (
     <Fragment>
-      <div className="starship-list-container">
+
+ <StarshipListContainer>
         {starshipsData &&
           starshipsData.map((starship, index) => {
             return <StarshipPreviewCard key={index} starship={starship} />;
           })}
-      </div>
+      </StarshipListContainer> 
       {next && (
-        <div className="load-btn-container">
-          <button
-            type="button"
-            className="btn load-btn"
+        <LoadButtonContainer>
+          <LoadButton       
+           
             onClick={handleLoadMore}
+            type="button"
           >
             {loading ? "loading..." : "Load More"}
-          </button>
-        </div>
+          </LoadButton>
+        </LoadButtonContainer>
       )}
     </Fragment>
   );

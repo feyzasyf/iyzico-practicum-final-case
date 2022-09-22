@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/context";
+import { SearchFormContainer, Input } from "./searchForm.styles";
 
 const SearchForm = () => {
   const { searchTerm, setSearchTerm, setPageNumber } = useContext(AppContext);
@@ -13,16 +14,16 @@ const SearchForm = () => {
     setPageNumber(null);
   };
   return (
-    <form className="search-form-container" onSubmit={handleOnSubmit}>
+    <SearchFormContainer onSubmit={handleOnSubmit}>
       <h2>search starships</h2>
-      <input
-        className="form-input"
+      <Input
+        
         onChange={handleChange}
         placeholder="please enter the name or the model"
         type="text"
         value={searchTerm}
       />
-    </form>
+    </SearchFormContainer>
   );
 };
 

@@ -1,31 +1,30 @@
 import React from "react";
 import { getUrlId } from "../../utils/getId/utilFunctions";
 import { Link } from "react-router-dom";
+import { CardContainer, InfoContainer, StarshipCardContainer, Title } from "./starship-preview-card.styles";
 
 const StarshipPreviewCard = ({ starship }) => {
   const { name, model, hyperdrive_rating, url } = starship;
 
   const id = getUrlId(url);
+  const imageUrl= `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
 
   return (
-    <Link to={`/starship/${id}`}>
-      <article className="starship-card">
-        <img
-          className="starship-img"
-          src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
-          onError={(e) => {
-            e.target.src =
-              "https://starwars-visualguide.com/assets/img/placeholder.jpg";
-          }}
-        />
-
-        <div className="starship-footer">
-          <h4>{name}</h4>
-          <p>model: {model}</p>
-          <p>hr: {hyperdrive_rating}</p>
-        </div>
-      </article>
-    </Link>
+    <CardContainer to={`/starship/${id}`}>
+      <StarshipCardContainer imageUrl={imageUrl}>
+      
+   
+   <InfoContainer>
+ 
+    <div className="container__profile__text">
+     <Title>{name}</Title>
+     <p>{model}</p>
+     <p>{hyperdrive_rating}</p>
+    </div>
+   </InfoContainer>
+  
+      </StarshipCardContainer>
+    </CardContainer>
   );
 };
 

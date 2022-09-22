@@ -1,15 +1,18 @@
 import React, { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as StarWarsLogo } from "../../assets/logo.svg";
+import { HeaderContainer, LogoContainer } from "./header.styles";
 
 const Header = () => {
   return (
     <Fragment>
-      <nav className="navbar">
+      <HeaderContainer>
+      <LogoContainer>
         <Link to="/">
           <StarWarsLogo />
         </Link>
-      </nav>
+        </LogoContainer>
+      </HeaderContainer>
       <Outlet />
     </Fragment>
   );
