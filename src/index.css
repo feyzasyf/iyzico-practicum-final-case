@@ -1,7 +1,7 @@
 /* Default css styles */
-:root{
+/* :root{ */
     /*colours*/
-    --primary-100:#d6ebe7;
+    /* --primary-100:#d6ebe7;
     --primary-200:#add6d0;
     --primary-300:#85c2b8;
     --primary-400:#5cada1;
@@ -10,10 +10,10 @@
    --primary-700:#1f5c52;
    --primary-800:#143d37;
    --primary-900:#0a1f1b;
- 
+  */
   /*grey*/
 
-  --grey-50:#F9FAFB;
+  /* --grey-50:#F9FAFB;
   --grey-100:#F3F4F6   ;
   --grey-200: #E5E7EB  ;
   --grey-300:#D1D5DB   ;
@@ -29,37 +29,37 @@
   --red-light: #f8d7da;
   --red-dark: #842029;
   --green-light: #d1e7dd;
-  --green-dark: #0f5132;
+  --green-dark: #0f5132; */
 
 
   /*fonts*/
 
---smalltext: 0.7em;
+/* --smalltext: 0.7em; */
 
 /*the rest*/
---backgroundColor: var(--grey-300);
+/* --backgroundColor: var(--grey-300);
 --textColor: var(--grey-900);
 --borderRadius: 0.25rem;
 --letterSpacing: 1px;
 --transition: 0.3s ease-in-out all;
 --max-width: 1120px;
---fixed-width: 600px;
+--fixed-width: 600px; */
 
 /* box shadow*/
---shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+/* --shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 --shadow-2:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 --shadow-3:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 --shadow-4:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
+} */
 /*
 =======
 Global Styles
 =======
 */
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 /* * {
   margin: 0;
   padding: 0;
@@ -97,7 +97,7 @@ img {
 } */
 
 
-.btn{
+/* .btn{
   cursor: pointer;
   color: var(--white);
   background: var(--black);
@@ -125,12 +125,12 @@ img {
   .section {
     width: 95vw;
   }
-}
+} */
 
 /* Loading */
 /*spinner*/ 
 
-@keyframes spinner{
+/* @keyframes spinner{
   to{
       transform: rotate(360deg);
   }
@@ -144,7 +144,7 @@ img {
   border-top-color: var(--primary-500);
   animation: spinner 0.6s linear infinite;
 margin: 0 auto;
-}
+} */
 
 /* Search Box */
 /* .search-form-container { */
@@ -174,12 +174,12 @@ margin: 0 auto;
   letter-spacing: var(--letterSpacing);
   margin-top: 1rem;
 } */
-.error {
+/* .error {
   color: var(--red-dark);
   text-transform: capitalize;
   padding-top: 0.5rem;
   letter-spacing: var(--letterSpacing);
-}
+} */
 
 /* starship list */
 /* .starship-list-container {
@@ -220,7 +220,7 @@ margin: 0 auto;
   
    
   }
-} */ */
+} */ 
 
 /* .load-btn-container{
   margin-top: 2rem;
@@ -270,7 +270,7 @@ opacity: 0.8 ;
 } */
 
 /* single starship */
-.single-starship {
+/* .single-starship {
   width: 90vw;
   max-width: var(--max-width);
   margin: 4rem auto;
@@ -292,4 +292,4 @@ opacity: 0.8 ;
   .single-starship {
     grid-template-columns: 1fr 2fr;
   }
-}
+} */

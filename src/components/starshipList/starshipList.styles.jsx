@@ -4,13 +4,11 @@ import Button from "../button/button";
 export const StarshipListContainer = styled.div`
   margin: 0 auto;
   margin-bottom: 2rem;
-  width: 90%;
-
+  width: 95%;
   display: grid;
-
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  column-gap: 1rem;
-  row-gap: 2rem;
+  column-gap: 30px;
+  row-gap: 32px;
 
   @media screen and (max-width: 590px) {
     justify-content: center;

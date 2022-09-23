@@ -4,28 +4,30 @@ export const GlobalStyle = createGlobalStyle`
 
 :root{
     /*colours*/
-    --primary-100:#d6ebe7;
-    --primary-200:#add6d0;
-    --primary-300:#85c2b8;
-    --primary-400:#5cada1;
-   --primary-500: #339989;
-   --primary-600: #297a6e;
-   --primary-700:#1f5c52;
-   --primary-800:#143d37;
-   --primary-900:#0a1f1b;
+    
+  --primary-100:#6e6f68   ;
+  --primary-300:#56574f   ;
+  --primary-400: #3e3f35  ;
+ --primary-500: #26271c   ;
+ --primary-600: #0e0f03  ;
+ --primary-700: #0d0e03  ;
+ --primary-800: #0b0c02   ;
+ --primary-900: #0a0b02  ;
+  
  
-  /*grey*/
+  /*grey*/ 
 
-  --grey-50:#F9FAFB;
-  --grey-100:#F3F4F6   ;
-  --grey-200: #E5E7EB  ;
-  --grey-300:#D1D5DB   ;
-  --grey-400: #9CA3AF  ;
- --grey-500: #6B7280   ;
- --grey-600: #4B5563   ;
- --grey-700: #374151  ;
- --grey-800: #1F2937   ;
- --grey-900: #111827  ;
+ --grey--50:#e7eef4
+    --grey-100:#e2ebf2;
+    --grey-200:#dde7f0;
+    --grey-300:#d8e4ed;
+    --grey-400:#d3e0eb;
+   --grey-500: #cedde9;
+   --grey-600: #b9c7d2;
+   --grey-700:#a5b1ba;
+   --grey-800:#909ba3;
+   --grey-900:#7c858c;
+
   
   --black: #222;
   --white: #fff;
@@ -40,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
 --smalltext: 0.7em;
 
 /*the rest*/
---backgroundColor: var(--grey-300);
+--backgroundColor: var(--grey-100);
 --textColor: var(--grey-900);
 --borderRadius: 0.25rem;
 --letterSpacing: 1px;
@@ -56,16 +58,19 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 html { 
-  background: url("images/bg.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
+  ${'' /* background: url("images/bg.jpg") no-repeat center top ;  */}
+  ${'' /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */}
+ background-size: 100% 160px;
   background-color:  var(--grey-100);
 }
 body {
   margin: 0;
-  background: var(--grey-100);
+  ${'' /* background: var(--grey-100); */}
+  ${'' /* background: var(--backgroundColor); */}
+  background-color: #ecf0f3;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -93,14 +98,8 @@ img {
   display: block;
 }
 
-@keyframes focus {
-    0%   {border-left: 2px solid #ffffff;}
-    25%  {border-left: 3px solid #ffe6e6;}
-    50%  {border-left: 4px solid #ff8080;}
-    100% {border-left: 5px solid #ff0000;}
-}
 
-@keyframes focus2 {
+@keyframes focus {
     0%   {border-left: 2px solid #ffffff;}
     25%  {border-left: 3px solid #fcefc7;}
     50%  {border-left: 4px solid #fee8a5;}

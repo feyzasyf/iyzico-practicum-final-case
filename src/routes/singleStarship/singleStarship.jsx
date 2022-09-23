@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import { Link } from "react-router-dom";
+import { StarshipDetailContainer,DetailInfo, StarshipInfo } from "./singleStarship.styles";
 
 const SingleStarship = () => {
   const { id } = useParams();
@@ -18,7 +19,8 @@ const SingleStarship = () => {
     cargo_capacity,
   } = starship;
   return (
-    <section className="single-starship">
+    <StarshipDetailContainer>
+   <StarshipInfo>
       <img
         className="starship-img"
         src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
@@ -27,8 +29,11 @@ const SingleStarship = () => {
             "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
         }}
       />
-      <div className="single-starship-info">
-        <h2>Name: {name}</h2>
+      
+      
+      <DetailInfo>
+        
+     <h2>{name}</h2>
         <p>Model: {model}</p>
         <p>Manufacturer: {manufacturer}</p>
         <p>Passengers: {passengers}</p>
@@ -38,8 +43,9 @@ const SingleStarship = () => {
         <Link to="/" className="btn">
           back to homepage
         </Link>
-      </div>
-    </section>
+      </DetailInfo>
+      </StarshipInfo>
+    </StarshipDetailContainer>
   );
 };
 

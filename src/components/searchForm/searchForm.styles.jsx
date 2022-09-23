@@ -15,7 +15,7 @@ export const Input = styled.input`
   padding: 1rem;
   font-size: 1rem;
   border-radius: var(--borderRadius);
-  color: var(--grey-600);
+  color: var(--grey-800);
   letter-spacing: var(--letterSpacing);
   margin-top: 1rem;
   

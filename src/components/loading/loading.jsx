@@ -1,8 +1,9 @@
 import React from 'react'
+import { LoadingContainer } from './loading.styles';
 
 const Loading = () => {
   return (
-    <div className='loading'></div>
+    <LoadingContainer></LoadingContainer>
   )
 }
 
