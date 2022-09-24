@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../../context/context";
 import { SearchFormContainer, Input } from "./searchForm.styles";
 
+
 const SearchForm = () => {
   const { searchTerm, setSearchTerm, setPageNumber } = useContext(AppContext);
 
@@ -16,13 +17,12 @@ const SearchForm = () => {
   return (
     <SearchFormContainer onSubmit={handleOnSubmit}>
       <h2>search starships</h2>
-      <Input
-        
+      <Input        
         onChange={handleChange}
         placeholder="please enter the name or the model"
         type="text"
         value={searchTerm}
-      />
+      />     
     </SearchFormContainer>
   );
 };

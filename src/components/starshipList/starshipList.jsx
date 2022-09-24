@@ -1,57 +1,50 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext} from "react";
 import { AppContext } from "../../context/context";
 import StarshipPreviewCard from "../starship-preview/starship-preview-card";
 import Loading from "../loading/loading";
 import { getNextPage } from "../../utils/getId/utilFunctions";
-import { StarshipListContainer, LoadButtonContainer,LoadButton } from "./starshipList.styles";
-
+import {
+  StarshipListContainer,
+  LoadButtonContainer,
+  LoadButton,
+  NoResult,
+} from "./starshipList.styles";
 
 
 const StarshipList = () => {
-  const { data, pageNumber, setPageNumber, loading } = useContext(AppContext);
-  const [starshipsData, setStarshipsData] = useState([]);
-  const { results: starships, next } = data;
+  console.log("starship List rendered")
+  const {
+    itemList: starships,
+    next,
+    setPageNumber,
+    loading,
+  } = useContext(AppContext);
 
-
-  // move this useEffect code into context
-  useEffect(() => {
-    if (pageNumber) {
-      if (starshipsData.length == 0) {
-        setPageNumber(null);
-      } else {
-        setStarshipsData((prevData) => {
-          return [...prevData, ...starships];
-        });
-      }
-    } else {
-      if (starships) setStarshipsData(starships);
-    }
-  }, [data]);
 
   const handleLoadMore = () => {
     const pageNo = getNextPage(next);
     setPageNumber(pageNo);
   };
 
-  if (loading && starshipsData.length == 0) {
+
+
+  if (loading && starships.length == 0) {
     return <Loading />;
   }
   return (
     <Fragment>
-
- <StarshipListContainer>
-        {starshipsData &&
-          starshipsData.map((starship, index) => {
+      <StarshipListContainer>
+        {starships.length == 0 ? (
+          <NoResult>No matching results found...</NoResult>
+        ) : (
+          starships.map((starship, index) => {
             return <StarshipPreviewCard key={index} starship={starship} />;
-          })}
-      </StarshipListContainer> 
+          })
+        )}
+      </StarshipListContainer>
       {next && (
         <LoadButtonContainer>
-          <LoadButton       
-           
-            onClick={handleLoadMore}
-            type="button"
-          >
+          <LoadButton onClick={handleLoadMore} type="button">
             {loading ? "loading..." : "Load More"}
           </LoadButton>
         </LoadButtonContainer>

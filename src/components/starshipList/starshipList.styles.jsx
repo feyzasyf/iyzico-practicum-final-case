@@ -9,11 +9,21 @@ export const StarshipListContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   column-gap: 30px;
   row-gap: 32px;
+  grid-template-areas:
+    ". a a a ."
+    ". a a a .";
 
   @media screen and (max-width: 590px) {
     justify-content: center;
   }
 `;
+
+export const NoResult = styled.div`
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+  font-size: 1.5rem;
+`
 export const LoadButtonContainer = styled.div`
   margin-top: 2rem;
   display: flex;

@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useAxios from "../../hooks/useAxios";
+import useFetchData from "../../hooks/useFetchData";
 import { Link } from "react-router-dom";
 import { StarshipDetailContainer,DetailInfo, StarshipInfo } from "./singleStarship.styles";
 
 const SingleStarship = () => {
   const { id } = useParams();
 
-  const { data: starship, loading, error } = useAxios(id);
+  const { response: starship, loading, error }  = useFetchData({id});
 
   const {
     name,

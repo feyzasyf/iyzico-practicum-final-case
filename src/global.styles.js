@@ -70,7 +70,8 @@ body {
   margin: 0;
   ${'' /* background: var(--grey-100); */}
   ${'' /* background: var(--backgroundColor); */}
-  background-color: #ecf0f3;
+  ${'' /* background-color: #ecf0f3; */}
+  background-color: #dfe3e6;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
