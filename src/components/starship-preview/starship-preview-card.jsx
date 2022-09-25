@@ -20,8 +20,8 @@ const StarshipPreviewCard = ({ starship }) => {
         <InfoContainer>
           <div className="container__profile__text">
             <Title>{name}</Title>
-            <p>{model}</p>
-            <p>{hyperdrive_rating}</p>
+            <p>Model: {model}</p>
+            <p>Hyperdrive Rating: {hyperdrive_rating}</p>
           </div>
         </InfoContainer>
       </StarshipCardContainer>

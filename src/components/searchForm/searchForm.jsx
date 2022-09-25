@@ -15,11 +15,10 @@ const SearchForm = () => {
     setPageNumber(null);
   };
   return (
-    <SearchFormContainer onSubmit={handleOnSubmit}>
-      <h2>search starships</h2>
+    <SearchFormContainer onSubmit={handleOnSubmit}>      
       <Input        
         onChange={handleChange}
-        placeholder="please enter the name or the model"
+        placeholder="Type to search by name or model"
         type="text"
         value={searchTerm}
       />     

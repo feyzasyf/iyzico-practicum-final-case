@@ -11,7 +11,9 @@ const Header = () => {
         <Link to="/">
           <StarWarsLogo />
         </Link>
+        <h2>Starship Database</h2>
         </LogoContainer>
+     
       </HeaderContainer>
       <Outlet />
     </Fragment>

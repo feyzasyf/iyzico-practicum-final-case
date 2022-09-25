@@ -16,6 +16,7 @@ export const StarshipCardContainer = styled.div`
 
 export const InfoContainer = styled.div`
   background-color: #e4f2fd;
+
   display: flex;
   opacity: 0.8;
   height: 5.5rem;
@@ -30,7 +31,7 @@ export const InfoContainer = styled.div`
   padding-bottom: 4px;
 
   p {
-    color: var(--grey-700);
+    color: #1F2937 ;
     font-size: 0.9rem;
     margin: 0.5rem;
 

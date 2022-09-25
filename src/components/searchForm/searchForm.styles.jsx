@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const SearchFormContainer = styled.form`
+  display: flex;
+justify-content: center;
+align-items: center;
   width: 80%;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
   margin-bottom: 3rem;
+  
 `;
 
 export const Input = styled.input`

@@ -3,10 +3,10 @@ import { AppContext } from "../../context/context";
 import StarshipPreviewCard from "../starship-preview/starship-preview-card";
 import Loading from "../loading/loading";
 import { getNextPage } from "../../utils/getId/utilFunctions";
+import Button from "../button/button";
 import {
   StarshipListContainer,
-  LoadButtonContainer,
-  LoadButton,
+  LoadButtonContainer,  
   NoResult,
 } from "./starshipList.styles";
 
@@ -31,22 +31,23 @@ const StarshipList = () => {
   if (loading && starships.length == 0) {
     return <Loading />;
   }
+  if(starships.length==0){
+    return(<NoResult>No matching results found...</NoResult>)
+  }
   return (
     <Fragment>
       <StarshipListContainer>
-        {starships.length == 0 ? (
-          <NoResult>No matching results found...</NoResult>
-        ) : (
+        {
           starships.map((starship, index) => {
             return <StarshipPreviewCard key={index} starship={starship} />;
           })
-        )}
+        }
       </StarshipListContainer>
       {next && (
         <LoadButtonContainer>
-          <LoadButton onClick={handleLoadMore} type="button">
+          <Button onClick={handleLoadMore} type="button">
             {loading ? "loading..." : "Load More"}
-          </LoadButton>
+          </Button>
         </LoadButtonContainer>
       )}
     </Fragment>

@@ -11,7 +11,7 @@ const useFetchData = (params) => {
   const urlLink = id ? baseUrl + id : baseUrl;
 
   useEffect(() => {
-    console.log("useFetchdata called")
+    
     setLoading(true);
     setError(false);
     let cancel;
