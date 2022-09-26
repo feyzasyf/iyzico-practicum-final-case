@@ -7,8 +7,8 @@ export const getUrlId=(url)=> {
 
   export const getNextPage=(url)=> {
     const splitUrl = url.split('=');
-    const itemId = splitUrl[splitUrl.length - 1];
+    const pageNo = splitUrl[splitUrl.length - 1];
   
-    return itemId;
+    return pageNo;
   }
 

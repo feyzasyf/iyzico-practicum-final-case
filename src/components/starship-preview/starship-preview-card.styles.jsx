@@ -44,6 +44,8 @@ export const Title = styled.p`
   font-size: 1rem;
   margin-top: 0;
 `;
+Title.displayName= 'Title';
+
 
 export const CardContainer = styled(Link)`
   margin: 0 auto;

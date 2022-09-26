@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../context/context";
+import { AppContext } from "../../context/appContext";
 import { SearchFormContainer, Input } from "./searchForm.styles";
 
 
@@ -11,6 +11,7 @@ const SearchForm = () => {
   };
 
   const handleChange = (e) => {
+    console.log("search term" + e.target.value);
     setSearchTerm(e.target.value);
     setPageNumber(null);
   };

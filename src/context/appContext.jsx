@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState,useContext } from "react";
 import useFetchData from "../hooks/useFetchData";
 import useProcessStarshipList from "../hooks/useProcessStarshipList";
 
@@ -28,3 +28,5 @@ console.log("context is called")
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
+
+

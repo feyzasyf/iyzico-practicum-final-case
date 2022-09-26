@@ -2,7 +2,8 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetchData from "../../hooks/useFetchData";
 import { Link } from "react-router-dom";
-import Button from "../button/button"
+import Button from "../button/button";
+import Error from "../error/error";
 import { StarshipDetailContainer,DetailInfo, StarshipInfo, ReturnHomeButtonContainer } from "./starshipDetail.styles";
 
 const StarshipDetail = () => {
@@ -26,6 +27,9 @@ const StarshipDetail = () => {
   const handleNavigate=()=>{
     navigate("/");
   }
+  if(error){
+    return <Error/>
+  }
   return (
     <div>   
     <StarshipDetailContainer>
@@ -42,9 +46,9 @@ const StarshipDetail = () => {
       
       <DetailInfo>
         
-     <h2>{name}</h2>
+     <h2 data-testid="name">{name}</h2>
         <p>Model: {model}</p>
-        <p>Manufacturer: {manufacturer}</p>
+        <p >Manufacturer: {manufacturer}</p>
         <p>Passengers: {passengers}</p>
         <p>Max Atmosphering Speed: {max_atmosphering_speed}</p>
         <p>Crew: {crew}</p>
@@ -53,11 +57,12 @@ const StarshipDetail = () => {
       </StarshipInfo>
     </StarshipDetailContainer>
     <ReturnHomeButtonContainer>
-    <Button onClick={handleNavigate}>Back to Homepage</Button>
+    <Button onClick={handleNavigate}>Go Back</Button>
     </ReturnHomeButtonContainer>
     {/* <Link to="/" className="btn">
           back to homepage
         </Link> */}
+
     </div>
   );
 };
