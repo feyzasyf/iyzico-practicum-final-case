@@ -9,6 +9,7 @@ width: 6rem;
   border-top-color: var(--primary-500);
   animation: spinner 0.6s linear infinite;
 margin: 0 auto;
+margin-top: 20px;
 
 @keyframes spinner{
   to{

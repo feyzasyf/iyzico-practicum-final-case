@@ -1,8 +1,9 @@
 import React from 'react';
 import {render, screen} from "@testing-library/react";
 import StarshipDetail from './starshipDetail';
-import useFetchData from "../../hooks/useFetchData";
 import { BrowserRouter } from 'react-router-dom';
+
+
 
 
 jest.mock('../../hooks/useFetchData', () => {
@@ -16,7 +17,7 @@ jest.mock('../../hooks/useFetchData', () => {
         cargo_capacity:2,
       } ;
       const mockLoading= false;
-      const mockError="";
+      const mockError=false;
 
 
     return () => {
@@ -41,15 +42,27 @@ beforeEach(()=>{
 
 describe("Starship Detail Component", ()=>{
 
-    it("renders name prop in Name container", ()=>{
+    it("renders props prop in Detail Info container", ()=>{
              
         const nameComponent= screen.getByTestId('name')
         expect(nameComponent).toHaveTextContent("name")
     
+        const modelComponent= screen.getByTestId('modelName')
+        expect(modelComponent).toHaveTextContent('Model: model')
+
+        const manufComponent= screen.getByTestId('manuf')
+        expect(manufComponent).toHaveTextContent('Manufacturer: manufacturer')
+
+        const passengerComponent= screen.getByTestId('passenger')
+        expect(passengerComponent).toHaveTextContent('Passengers: 1')
+
+        const speedComponent= screen.getByTestId('speed')
+        expect(speedComponent).toHaveTextContent('Max Atmosphering Speed: 10')
+
+        const cargoComponent= screen.getByTestId('cargo')
+        expect(cargoComponent).toHaveTextContent('Cargo capacity: 2')
+        
     });
-
   
-
-
-})
+  })
 

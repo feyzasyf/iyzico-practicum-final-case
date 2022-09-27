@@ -25,6 +25,7 @@ const useFetchData = (params) => {
         const { data } = res;
         setResponse(data);      
         setLoading(false);
+      
       })
       .catch((e) => {
         if (axios.isCancel(e)) return;

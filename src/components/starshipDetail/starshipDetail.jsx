@@ -1,16 +1,21 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetchData from "../../hooks/useFetchData";
-import { Link } from "react-router-dom";
 import Button from "../button/button";
 import Error from "../error/error";
-import { StarshipDetailContainer,DetailInfo, StarshipInfo, ReturnHomeButtonContainer } from "./starshipDetail.styles";
+import Loading from "../loading/loading";
+import {
+  StarshipDetailContainer,
+  DetailInfo,
+  StarshipInfo,
+  ReturnHomeButtonContainer,
+} from "./starshipDetail.styles";
 
 const StarshipDetail = () => {
   const { id } = useParams();
-  const navigate= useNavigate()
+  const navigate = useNavigate();
 
-  const { response: starship, loading, error }  = useFetchData({id});
+  const { response: starship, loading, error } = useFetchData({ id });
 
   const {
     name,
@@ -22,47 +27,46 @@ const StarshipDetail = () => {
     cargo_capacity,
   } = starship;
 
-
-
-  const handleNavigate=()=>{
+  const handleNavigate = () => {
     navigate("/");
+  };
+
+
+  
+  if (error) {
+    return <Error />;
   }
-  if(error){
-    return <Error/>
+  if (loading) {
+    return <Loading />;
   }
   return (
-    <div>   
-    <StarshipDetailContainer>
-   <StarshipInfo>
-      <img
-        className="starship-img"
-        src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
-        onError={(e) => {
-          e.target.src =
-            "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
-        }}
-      />
-      
-      
-      <DetailInfo>
-        
-     <h2 data-testid="name">{name}</h2>
-        <p>Model: {model}</p>
-        <p >Manufacturer: {manufacturer}</p>
-        <p>Passengers: {passengers}</p>
-        <p>Max Atmosphering Speed: {max_atmosphering_speed}</p>
-        <p>Crew: {crew}</p>
-        <p>Cargo capacity: {cargo_capacity}</p>        
-      </DetailInfo>
-      </StarshipInfo>
-    </StarshipDetailContainer>
-    <ReturnHomeButtonContainer>
-    <Button onClick={handleNavigate}>Go Back</Button>
-    </ReturnHomeButtonContainer>
-    {/* <Link to="/" className="btn">
-          back to homepage
-        </Link> */}
+    <div>
+      <StarshipDetailContainer>
+        <StarshipInfo>
+          <img
+            src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
+            onError={(e) => {
+              e.target.src =
+                "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
+            }}
+          />
 
+          <DetailInfo>
+            <h2 data-testid="name">{name}</h2>
+            <p data-testid="modelName">Model: {model}</p>
+            <p data-testid="manuf">Manufacturer: {manufacturer}</p>
+            <p data-testid="passenger">Passengers: {passengers}</p>
+            <p data-testid="speed">
+              Max Atmosphering Speed: {max_atmosphering_speed}
+            </p>
+            <p data-testid="crew">Crew: {crew}</p>
+            <p data-testid="cargo">Cargo capacity: {cargo_capacity}</p>
+          </DetailInfo>
+        </StarshipInfo>
+      </StarshipDetailContainer>
+      <ReturnHomeButtonContainer>
+        <Button onClick={handleNavigate}>Go Back</Button>
+      </ReturnHomeButtonContainer>
     </div>
   );
 };
