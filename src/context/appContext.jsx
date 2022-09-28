@@ -14,7 +14,7 @@ export const AppProvider = ({ children }) => {
 
 
   const { itemList } = useProcessStarshipList(results, pageNumber);
-console.log("context is called")
+
 
   const value = {
     itemList,
@@ -24,6 +24,7 @@ console.log("context is called")
     setPageNumber,
     pageNumber,
     loading,
+    error,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

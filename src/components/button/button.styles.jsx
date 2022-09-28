@@ -2,11 +2,7 @@ import styled from "styled-components";
 
 export const BaseButton = styled.button`
   cursor: pointer;
-  /* color: var(--grey-200); */
-  /* background: var(--primary-500); */
-  /* background: #fbe7a8; */
-  background: #74b3e7;
-  color: #1F2937 ;
+  background: var(--blue-300);
   border: transparent;
   border-radius: 0.25rem;
   letter-spacing: 1px;
@@ -20,9 +16,8 @@ export const BaseButton = styled.button`
 
   &:hover {
     /* background: var(--primary-400); */
-    background: #b0d4f1;
+    background: var(--blue-200);
     box-shadow: var(--shadow-3);
-
     color: var(--grey-100);
   }
 `;

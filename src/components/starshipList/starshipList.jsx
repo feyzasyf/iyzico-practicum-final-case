@@ -2,7 +2,7 @@ import React, { Fragment, useContext} from "react";
 import { AppContext } from "../../context/appContext";
 import StarshipPreviewCard from "../starship-preview/starship-preview-card";
 import Loading from "../loading/loading";
-import { getNextPage } from "../../utils/getId/utilFunctions";
+import { getNextPage } from "../../utils/utilFunctions";
 import Button from "../button/button";
 import Error from "../error/error";
 import {
@@ -32,10 +32,10 @@ const StarshipList = () => {
   if(error){
     return <Error/>
   }
-  if (loading && starships.length == 0) {
+  if (loading && starships.length === 0) {
     return <Loading />;
   }
-  if(starships.length==0){
+  if(starships.length === 0){
     return(<NoResult data-testid="noresult">No matching results found...</NoResult>)
   }
   return (

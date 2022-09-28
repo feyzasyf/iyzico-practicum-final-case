@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const useProcessStarshipList = (results, pageNumber) => {
   const [itemList, setItemList] = useState([]);
-console.log("useProcessStarshipList called")
+
   useEffect(() => {
     if (pageNumber) {
       setItemList((prevData) => {

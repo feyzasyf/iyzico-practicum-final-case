@@ -9,8 +9,8 @@ export const ScrollButton = styled.button`
   bottom: 5%;
   left: 92%;
   border-radius: 50%;
-  border: 2px solid #74b3e7;
-  background: #74b3e7;
+  border: 2px solid var(--blue-300);
+  background: var(--blue-300);
   color: white;
   cursor: pointer;
   text-align: center;

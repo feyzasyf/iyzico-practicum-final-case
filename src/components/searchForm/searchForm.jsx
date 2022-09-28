@@ -11,7 +11,7 @@ const SearchForm = () => {
   };
 
   const handleChange = (e) => {
-    console.log("search term" + e.target.value);
+
     setSearchTerm(e.target.value);
     setPageNumber(null);
   };

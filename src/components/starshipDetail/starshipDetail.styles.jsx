@@ -11,10 +11,10 @@ export const StarshipInfo = styled.div`
   margin-top: 1rem;
   text-align: left;
 
-  background-color: #cddae4;
+  background-color: var(--main-400);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border-left: 15px solid #f6c225;
+  border-left: 15px solid var(--mainYellow);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
   @media screen and (min-width: 992px) {
@@ -31,14 +31,7 @@ export const StarshipInfo = styled.div`
 
   @media screen and (max-width: 476px) {
     margin-top: 1rem;
-    border-left: 10px solid #f6c225;
-  }
-`;
-
-export const ImageContainer = styled.div`
-  img {
-    border-radius: var(--mainBorderRadius);
-    object-fit: cover;
+    border-left: 10px solid var(--mainYellow);
   }
 `;
 

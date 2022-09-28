@@ -15,8 +15,7 @@ export const StarshipCardContainer = styled.div`
 `;
 
 export const InfoContainer = styled.div`
-  background-color: #e4f2fd;
-
+  background-color: var(--main--300);
   display: flex;
   opacity: 0.8;
   height: 5.5rem;
@@ -31,7 +30,6 @@ export const InfoContainer = styled.div`
   padding-bottom: 4px;
 
   p {
-    color: #1F2937 ;
     font-size: 0.9rem;
     margin: 0.5rem;
 
@@ -44,8 +42,6 @@ export const Title = styled.p`
   font-size: 1rem;
   margin-top: 0;
 `;
-Title.displayName= 'Title';
-
 
 export const CardContainer = styled(Link)`
   margin: 0 auto;
@@ -56,7 +52,7 @@ export const CardContainer = styled(Link)`
       border-bottom-left-radius: 10px;
       animation-name: focus2;
       animation-duration: 0.25s;
-      border-left: 8px solid #f6c225;
+      border-left: 8px solid var(--mainYellow);
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
     }

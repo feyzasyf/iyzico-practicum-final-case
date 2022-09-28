@@ -42,23 +42,17 @@ const StarshipDetail = () => {
   return (
     <div>
       <StarshipDetailContainer>
-        <StarshipInfo>
+        <StarshipInfo>        
           <img
-            src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
-            onError={(e) => {
-              e.target.src =
-                "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
-            }}
-          />
+            src={require(`../../assets/starshipImages/${id}.jpg`)}            
+          />         
 
           <DetailInfo>
             <h2 data-testid="name">{name}</h2>
             <p data-testid="modelName">Model: {model}</p>
             <p data-testid="manuf">Manufacturer: {manufacturer}</p>
             <p data-testid="passenger">Passengers: {passengers}</p>
-            <p data-testid="speed">
-              Max Atmosphering Speed: {max_atmosphering_speed}
-            </p>
+            <p data-testid="speed">Max Atmosphering Speed: {max_atmosphering_speed}</p>
             <p data-testid="crew">Crew: {crew}</p>
             <p data-testid="cargo">Cargo capacity: {cargo_capacity}</p>
           </DetailInfo>

@@ -5,6 +5,7 @@ import Header from "./components/header/header";
 import {GlobalStyle} from "./global.styles";
 import ErrorPage from "./routes/error/errorPage";
 
+
 function App() {
   return (
     <> 
@@ -16,7 +17,9 @@ function App() {
         <Route path="starship/:id" element={<SingleStarship />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
+    
     </Routes>
+   
     </>
   );
 }

@@ -15,7 +15,7 @@ const Header = () => {
         </LogoContainer>
      
       </HeaderContainer>
-      <Outlet />
+      <Outlet />      
     </Fragment>
   );
 };
