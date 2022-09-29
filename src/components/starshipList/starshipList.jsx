@@ -43,8 +43,9 @@ const StarshipList = () => {
     
       <StarshipListContainer>
         {
-          starships.map((starship, index) => {
-            return <StarshipPreviewCard key={index} starship={starship} />;
+          starships.map((starship) => {
+
+            return <StarshipPreviewCard key={starship.url} starship={starship} />;
           })
         }
       </StarshipListContainer>

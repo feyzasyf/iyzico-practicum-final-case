@@ -25,7 +25,7 @@ Start Development Mode :
  
 ## Libraries and Technologies used in the app
  
-  - This app is styled by Styled Components
+  - This app is styled with Styled Components
   - Context API is used for for state management
   - Axios is used for API requests
   - React Router v6 is used for routing
