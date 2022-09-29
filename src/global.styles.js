@@ -78,6 +78,7 @@ html {
 
  background-size: 100% 160px;
   background-color:  var(--backgroundColor);
+  height:100%;
 }
 body {
   margin: 0;

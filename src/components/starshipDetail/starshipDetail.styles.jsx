@@ -16,6 +16,9 @@ export const StarshipInfo = styled.div`
   border-bottom-left-radius: 10px;
   border-left: 15px solid var(--mainYellow);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  img{
+    height:100%;
+  }
 
   @media screen and (min-width: 992px) {
     display: grid;
