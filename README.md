@@ -4,24 +4,35 @@
 
 This is a React App project that was bootstrapped with Create React App, consuming external API : [SWAPI]( https://swapi.dev/).
 
+See the project LIVE: [Demo Starship Database](https://tiny-kheer-9935b9.netlify.app/)
+
 ## Getting Started
 Clone this repo : `git clone https://github.com/feyzasyf/iyzico-practicum-final-case.git`
 
 Navigate to the root folder and install all dependencies :
 
-    `yarn or npm install`
+- `yarn` or `npm install`
 
 Start Development Mode :
 
-    `yarn start or npm start`
+- `yarn start` or `npm start`
     
-   Open http://localhost:3000 to view it in the browser.
+ Open http://localhost:3000 to view it in the browser.
+ The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+Run Unit Tests:
+
+- `npm test` or `yarn test`
+
+Launches the test runner in the interactive watch mode.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
    
    
 ## How to use the app
  
- This project lists all the starships available in SWAPI.
- You can search among starships by their name or model, and access the detail page about each starship by clicking on the relevant starship card.
+ On the home page you can see the list of all the starships available in SWAPI, [starships endpoint](https://swapi.dev/api/starships/).<br>
+You can search among starships by their name or model, and access the details of each starship by clicking on the relevant starship card by being redirected to the single starship detail page.
  
 ## Libraries and Technologies used in the app
  
