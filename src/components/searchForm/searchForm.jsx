@@ -20,7 +20,7 @@ const SearchForm = () => {
       <Input        
         onChange={handleChange}
         placeholder="Type to search by name or model"
-        type="text"
+        type="search"
         value={searchTerm}
       />     
     </SearchFormContainer>
