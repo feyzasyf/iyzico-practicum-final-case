@@ -13,8 +13,13 @@ const SearchForm = () => {
   const handleChange = (e) => {
 
     setSearchTerm(e.target.value);
+    //when the input changes we also set pageNumber to null,
+    //so that the results from the first page of our search will be fetched and set and shown
     setPageNumber(null);
   };
+
+
+  
   return (
     <SearchFormContainer onSubmit={handleOnSubmit}>      
       <Input        
