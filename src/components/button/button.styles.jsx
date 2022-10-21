@@ -15,7 +15,7 @@ export const BaseButton = styled.button`
   margin-bottom: 2rem;
 
   &:hover {
-    /* background: var(--primary-400); */
+  
     background: var(--blue-200);
     box-shadow: var(--shadow-3);
     color: var(--grey-100);

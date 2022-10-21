@@ -12,3 +12,39 @@ export const getUrlId=(url)=> {
     return pageNo;
   }
 
+  export const debounce=(callback, delay)=>{
+    let timeout;
+    return (...args)=>{
+    clearTimeout(timeout);
+    timeout= setTimeout(()=>{
+      callback(...args)
+    }, delay)
+    }
+  
+  }
+
+ export const throttle =(callback, delay)=>{
+  let shouldWait = false;
+  let waitingArgs;
+  const timeoutFunc = ()=>{
+    if(waitingArgs === null){
+      shouldWait= false
+      }else{
+        callback(...waitingArgs);
+        waitingArgs= null
+        setInterval(timeoutFunc, delay)
+      }
+
+  }
+  return (...args) =>{    
+    if(shouldWait) {
+      waitingArgs = args;
+      return
+    }
+    callback(...args)
+    shouldWait= true;
+
+     setTimeout(timeoutFunc, delay);
+  }
+
+ }

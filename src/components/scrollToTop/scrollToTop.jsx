@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineArrowUp } from "react-icons/ai";
 import { ScrollButton, ScrollIcon } from "./scrollToTop.styles";
-// import "./scrollToTop.styles.css";
+import { throttle } from "../../utils/utilFunctions";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,11 +21,11 @@ const ScrollToTop = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", throttle(toggleVisibility, 250));
 
     // cleanup function
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
+      window.removeEventListener("scroll", throttle(toggleVisibility, 250));
     };
   }, []);
 
