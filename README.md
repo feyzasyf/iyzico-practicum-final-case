@@ -37,7 +37,7 @@ You can search among starships by their name or model, and access the details of
 ## Libraries and Technologies used in the app
  
   - This app is styled with Styled Components
-  - Context API is used for for state management
+  - Context API is used for dependency injection
   - Axios is used for API requests
   - React Router v6 is used for routing
       
